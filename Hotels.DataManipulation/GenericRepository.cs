@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using AAA.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hotels.DataManipulation
@@ -16,6 +17,11 @@ namespace Hotels.DataManipulation
         {
             _context = context;
             _db = context.Set<T>();
+        }
+
+        public PagedList<T> GetAllParams(RequestParameters requestParameters)
+        {
+            return PagedList<T>.ToPagesList(_db, requestParameters.PageNumber, requestParameters.PageSize);
         }
 
         // GetAll(x => x.Code.Lenght > 2, x => x.OrderBy(y => y.Code))

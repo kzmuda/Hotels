@@ -18,6 +18,7 @@ namespace Hotels.DataManipulation
             _context = context;
         }
 
+        //public CountryRepository Countries => new CountryRepository(_context);
         public IGenericRepository<Country> Countries => new GenericRepository<Country>(_context);
         public IGenericRepository<Hotel> Hotels => new GenericRepository<Hotel>(_context);
 

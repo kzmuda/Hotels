@@ -8,6 +8,8 @@ using AutoMapper;
 using Hotels.DataManipulation;
 using Hotels.Model;
 using Hotels.Model.Country;
+using AAA.Common;
+using Newtonsoft.Json;
 
 namespace Hotels.Controllers
 {
@@ -25,13 +27,26 @@ namespace Hotels.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetCountries()
+        public IActionResult GetCountries([FromQuery] RequestParameters requestParameters)
         {
-            var countries = _uow.GetAllCountriesWithHotels();
+            //var countries = _uow.GetAllCountriesWithHotels();
+            var countries = _uow.Countries.GetAllParams(requestParameters);
 
             var result = _mapper.Map<List<CountryDto>>(countries);
 
-            return Ok(countries);
+            var metadata = new
+            {
+                countries.CurrentPage,
+                countries.TotalPages,
+                countries.HasNext,
+                countries.HasPrevious,
+                countries.PageSize,
+                countries.TotalCount
+            };
+
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metadata));
+
+            return Ok(result);
         }
 
         [HttpGet("{id}")]

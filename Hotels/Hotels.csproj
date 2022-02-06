@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AAA.Common\AAA.Common.csproj" />
     <ProjectReference Include="..\Hotels.DataManipulation\Hotels.DataManipulation.csproj" />
     <ProjectReference Include="..\Hotels.Data\Hotels.Data.csproj" />
     <ProjectReference Include="..\Hotels.Domain\Hotels.Domain.csproj" />
