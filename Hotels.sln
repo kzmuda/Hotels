@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotels", "Hotels\Hotels.csproj", "{1909FAF3-BCDE-46AD-9B6B-516B805A691E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotels", "Hotels\Hotels.csproj", "{1909FAF3-BCDE-46AD-9B6B-516B805A691E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotels.Domain", "Hotels.Domain\Hotels.Domain.csproj", "{9B031C56-6C64-4D6B-89A1-3D51ADC5589F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotels.Domain", "Hotels.Domain\Hotels.Domain.csproj", "{9B031C56-6C64-4D6B-89A1-3D51ADC5589F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotels.Data", "Hotels.Data\Hotels.Data.csproj", "{B9BE617A-513B-4044-9E55-9B8BE60E33D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hotels.Data", "Hotels.Data\Hotels.Data.csproj", "{B9BE617A-513B-4044-9E55-9B8BE60E33D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotels.DataManipulation", "Hotels.DataManipulation\Hotels.DataManipulation.csproj", "{DF36F825-1B85-4E6B-B108-55E14F8FDDAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B9BE617A-513B-4044-9E55-9B8BE60E33D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9BE617A-513B-4044-9E55-9B8BE60E33D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9BE617A-513B-4044-9E55-9B8BE60E33D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF36F825-1B85-4E6B-B108-55E14F8FDDAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF36F825-1B85-4E6B-B108-55E14F8FDDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF36F825-1B85-4E6B-B108-55E14F8FDDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF36F825-1B85-4E6B-B108-55E14F8FDDAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

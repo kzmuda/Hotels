@@ -10,8 +10,10 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Hotels.Data;
+using Hotels.DataManipulation;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hotels
@@ -32,6 +34,10 @@ namespace Hotels
             {
                 options.UseSqlServer(Configuration.GetConnectionString("MssqlConnection"));
             });
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
