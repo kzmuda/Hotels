@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Hotels.Model
+namespace Hotels.Model.Country
 {
-    public class BaseCountryDto
+    public abstract class BaseCountryDto
     {
         [Required]
         [StringLength(maximumLength: 32, ErrorMessage = "Country name too long")]

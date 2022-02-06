@@ -1,9 +1,8 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Hotels.Model
+namespace Hotels.Model.Hotel
 {
-    public class CreateHotelDto
+    public abstract class BaseHotelDto
     {
         [Required]
         [StringLength(maximumLength: 64, ErrorMessage = "Hotel name is too long!")]

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Hotels.Domain;
 using Hotels.Model;
+using Hotels.Model.Country;
 
 namespace Hotels.Configuration.Profiles
 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Hotels.Data;
@@ -20,6 +21,11 @@ namespace Hotels.DataManipulation
         public IGenericRepository<Country> Countries => new GenericRepository<Country>(_context);
         public IGenericRepository<Hotel> Hotels => new GenericRepository<Hotel>(_context);
 
+        public List<Country> GetAllCountriesWithHotels(Expression<Func<Country, bool>> expression = null,
+            Func<IQueryable<Country>, IOrderedQueryable<Country>> orderBy = null)
+        {
+            return Countries.GetAll(expression, orderBy, new List<string>(){"Hotels"});
+        }
 
         public void Save()
         {

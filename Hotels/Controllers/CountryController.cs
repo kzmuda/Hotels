@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Hotels.DataManipulation;
 using Hotels.Model;
+using Hotels.Model.Country;
 
 namespace Hotels.Controllers
 {
@@ -26,7 +27,7 @@ namespace Hotels.Controllers
         [HttpGet]
         public IActionResult GetCountries()
         {
-            var countries = _uow.Countries.GetAll();
+            var countries = _uow.GetAllCountriesWithHotels();
 
             var result = _mapper.Map<List<CountryDto>>(countries);
 
@@ -41,6 +42,31 @@ namespace Hotels.Controllers
             var countryDto = _mapper.Map<CountryDto>(country);
 
             return Ok(countryDto);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateCountry(int id, [FromBody]UpdateCountryDto updateDto)
+        {
+            try
+            {
+                var country = _uow.Countries.Get(x => x.Id == id);
+
+                if (country == null)
+                {
+                    return NotFound("");
+                }
+
+                _mapper.Map(updateDto, country);
+                _uow.Save();
+
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                // TODO: logowanie błędów
+                throw;
+            }
+            
         }
     }
 }
